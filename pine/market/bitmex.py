@@ -4,12 +4,12 @@ import requests
 
 from .base import MarketBase, MarketError, empty_udf, utcunixtime, register_market
 
-URL_TMPL = "https://www.bitmex.com/api/udf/history?symbol=XBTUSD&" + \
+URL_TMPL = "http://localhost:5040/tv/history?symbol=SOL-PERP&" + \
             "resolution={resolution}&from={f}&to={t}"
 
-MARKET = 'BITMEX'
-SYMBOL = 'XBTUSD'
-TICKERID = 'BITMEX:XBTUSD'
+MARKET = 'MANGO'
+SYMBOL = 'SOL-PERP'
+TICKERID = 'MANGO:SOL-PERP'
 
 class BitMexMarketBase (MarketBase):
 
@@ -24,7 +24,7 @@ class BitMexMarketBase (MarketBase):
 
 class BitMexMarketDirect (BitMexMarketBase):
 
-    def __init__ (self, symbol='XBTUSD', resolution=60):
+    def __init__ (self, symbol='SOL-PERP', resolution=60):
         super().__init__(symbol, resolution)
 
         unixtime = utcunixtime()
@@ -46,7 +46,7 @@ class BitMexMarket (BitMexMarketBase):
     def __init__ (self, symbol=SYMBOL, resolution=60, port=PROXY_PORT):
         super().__init__(symbol, resolution)
 
-        #self.client = RPCClient('127.0.0.1', port)
+        #self.client = RPCClient('0.0.0.0', port)
         self.client = msgpackrpc.Client(msgpackrpc.Address('127.0.0.1', port), unpack_encoding='utf-8')
         data = self.client.call('ohlcv', TICKERID, self.resolution, 256)
         self.data = dict(

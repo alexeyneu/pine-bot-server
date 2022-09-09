@@ -5,7 +5,7 @@
     <label for="symbol">Symbol: </label>
     <select name="symbol">
         {% for s in symbols %}
-            <option value="{{s}}" {% if s == 'BITMEX:XBTUSD' %} selected {% endif %}>{{s}}</option>
+            <option value="{{s}}" {% if s == 'MANGO:SOL-PERP' %} selected {% endif %}>{{s}}</option>
         {% endfor %}
     </select>
     <label for="resolution">Tick: </label>

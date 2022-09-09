@@ -88,8 +88,8 @@ def scan_input ():
         max_bars_back = vm.meta.get('max_bars_back', 0)
 
         params = OrderedDict(
-            exchange='BITMEX',
-            symbol='XBTUSD',
+            exchange='MANGO',
+            symbol='SOL-PERP',
             resolution=30,
             strategy=OrderedDict(
                 default_qty_value=default_qty_value,
@@ -224,4 +224,4 @@ def step_vm ():
 if __name__ == '__main__':
     import os
     port = int(os.environ.get('PORT', 5000))
-    app.run(port=port)
+    app.run(host='0.0.0.0', port=port)

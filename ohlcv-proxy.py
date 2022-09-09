@@ -33,5 +33,5 @@ if __name__ == '__main__':
     #server = StreamServer(('127.0.0.1', port), server)
     #server.serve_forever()
     server = msgpackrpc.Server(server, unpack_encoding='utf-8')
-    server.listen(msgpackrpc.Address('127.0.0.1', port))
+    server.listen(msgpackrpc.Address('0.0.0.0', port))
     server.start()

@@ -12,7 +12,7 @@ also running `serum-history` required for all this to work
 ```
 python3.8 -m pip install ta-lib
 python3.8 -m pip install numpy
-sudo apt install python3.8-dev -y
+
 python3.8 -m pip install mprpc
 python3.8 -m pip install "plotly==3.4.2" --force-reinstall
 python3.8 -m pip install flask

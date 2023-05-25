@@ -10,7 +10,6 @@ also running `serum-history` required for all this to work
 (ofc it's not original script here)
   
 ```
-sudo apt install python3.8 -y
 python3.8 -m pip install ta-lib
 python3.8 -m pip install numpy
 sudo apt install python3.8-dev -y
@@ -34,7 +33,7 @@ curl -OL https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tar.xz
 Extract the Python archive. Remember, change the version number if you downloaded a newer one:  
 
 tar -xf Python-3.8.12.tar.xz  
-mv Python3.8.12 /opt/Python3.8.12  
+mv Python-3.8.12 /opt/Python3.8.12  
 
 Now install the dependencies required to install Python 3.8:  
 
@@ -67,10 +66,3 @@ sudo ldconfig /opt/Python3.8.12
 
 Note, do not skip this, or you will face issues. You will also need to replace the path with your directory name and version.  
 
-Confirm that Python 3.8 is installed and the build version by running the following command:  
-
-python3.8 –version  
-
-Example output:  
-
-Python 3.8.12

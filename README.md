@@ -10,6 +10,17 @@ also running `serum-history` required for all this to work
 (ofc it's not original script here)
   
 ```
+      root
+
+curl -OL http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
+tar -xzf ta-lib-0.4.0-src.tar.gz
+cd ta-lib/
+./configure
+make
+make install
+
+     end
+
 python3.8 -m pip install ta-lib
 python3.8 -m pip install numpy
 

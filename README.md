@@ -1,6 +1,6 @@
 # pine-bot-server
 pine-script compiler. can answer buy or sell out of script  
-working fork for a robot. they do not maintain stuff on mangotrade but you change it to work with say binance. Easy thing
+working fork for a robot. they do not maintain stuff on mangotrade but you may change it to work with say binance. Easy thing
   
   
 robots are in `examples` of `solcpp`  

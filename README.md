@@ -1,6 +1,6 @@
 # pine-bot-server
 pine-script compiler. can answer buy or sell out of script  
-working fork for a robot. they do not maintain stuff on mangotrade but you may change it to work with say binance. Easy thing
+working fork for a robot
   
   
 robots are in `examples` of `solcpp`  
@@ -10,20 +10,8 @@ also running `serum-history` required for all this to work
 (ofc it's not original script here)
   
 ```
-      root
-
-curl -OL http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
-tar -xzf ta-lib-0.4.0-src.tar.gz
-cd ta-lib/
-./configure
-make
-make install
-
-     end
-
 python3.8 -m pip install ta-lib
 python3.8 -m pip install numpy
-
 python3.8 -m pip install mprpc
 python3.8 -m pip install "plotly==3.4.2" --force-reinstall
 python3.8 -m pip install flask
@@ -41,10 +29,10 @@ Install Python 3.8
 
 curl -OL https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tar.xz  
 
-Extract the Python archive. Remember, change the version number if you downloaded a newer one:  
+Extract the Python archive.  
 
 tar -xf Python-3.8.12.tar.xz  
-mv Python-3.8.12 /opt/Python3.8.12  
+mv Python3.8.12 /opt/Python3.8.12  
 
 Now install the dependencies required to install Python 3.8:  
 
@@ -58,11 +46,7 @@ cd /opt/Python3.8.12/
 Note, The script performs several checks to make sure all of the dependencies on your system are present. The ./configure –enable-optimizations will optimize the Python binary by running multiple tests, which will make the build process slower.  
 
 Now that you have built and configured the environment, it is time to compile it with the command make.  
-  
-make  
-  
-A handy trick is to specify the -j <number of cpu> as this can significantly increase compiling speed if you have a powerful server. For example, the LinuxCapable server has 6 CPUs, and I can use all 6 or at least use 4 to 5 to increase speed.  
-  
+
 make -j 6  
 
 Once you have finished building, install Python binaries as follows:  
@@ -75,5 +59,11 @@ Next, after the installation, you need to configure the dynamic linker run-time 
 
 sudo ldconfig /opt/Python3.8.12  
 
-Note, do not skip this, or you will face issues. You will also need to replace the path with your directory name and version.  
+Note, do not skip this, or you will face issues. 
+Confirm that Python 3.8 is installed and the build version by running the following command:  
 
+python3.8 –version  
+
+Example output:  
+
+Python 3.8.12
